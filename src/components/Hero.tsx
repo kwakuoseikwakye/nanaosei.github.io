@@ -23,9 +23,7 @@ export const Hero = () => {
                         priority
                     />
                 </div>
-                <div className="absolute bottom-2 right-2 bg-emerald-100 p-2 rounded-full border-2 border-white" title="Open for work">
-                    <div className="size-3 bg-emerald-500 rounded-full animate-pulse"></div>
-                </div>
+
             </div>
 
             {/* Intro Text */}
