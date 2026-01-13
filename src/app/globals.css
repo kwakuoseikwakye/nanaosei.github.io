@@ -2,53 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-:root,
-body,
-html {
-  height: 100%;
-  scroll-behavior: smooth;
-  /* Use Outfit for headings and Inter for body text */
-  font-family: var(--font-inter), 'Inter', sans-serif;
-}
+:root {
+  /* Minimalist Light Theme */
+  --background: 0 0% 100%; /* #FFFFFF */
+  --foreground: 0 0% 13%; /* #212121 */
 
-@layer base {
-  :root {
-    /* Premium Dark Theme - "Midnight" */
-    --background: 222 47% 11%; /* Deep Navy Blue */
-    --foreground: 210 40% 98%; /* Soft White */
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 13%;
 
-    --card: 222 47% 11%;
-    --card-foreground: 210 40% 98%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 13%;
 
-    --popover: 222 47% 11%;
-    --popover-foreground: 210 40% 98%;
+  --primary: 0 0% 0%; /* #000000 */
+  --primary-foreground: 0 0% 100%;
 
-    --primary: 210 100% 50%; /* Vibrant Blue */
-    --primary-foreground: 222 47% 11%;
+  --secondary: 0 0% 95%; /* #F2F2F2 */
+  --secondary-foreground: 0 0% 13%;
 
-    --secondary: 217 33% 17%; /* Darker Blue-Grey */
-    --secondary-foreground: 210 40% 98%;
+  --muted: 0 0% 96%;
+  --muted-foreground: 0 0% 45%;
 
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
+  --accent: 153 82% 90%; /* #D1FAE5 - Pastel Green */
+  --accent-foreground: 154 90% 15%; /* Dark Green */
 
-    --accent: 210 100% 50%;
-    --accent-foreground: 210 40% 98%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+  --border: 0 0% 90%;
+  --input: 0 0% 90%;
+  --ring: 0 0% 0%;
 
-    --border: 217 33% 20%;
-    --input: 217 33% 17%;
-    --ring: 210 100% 50%;
-
-    --radius: 1rem;
-
-    /* Glassmorphism variables */
-    --glass-bg: rgba(15, 23, 42, 0.6);
-    --glass-border: rgba(255, 255, 255, 0.08);
-    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  }
+  --radius: 0.75rem;
 }
 
 @layer base {
@@ -58,75 +42,20 @@ html {
   
   body {
     @apply bg-background text-foreground;
-    /* Subtle gradient background */
-    background: radial-gradient(circle at top left, #1e293b 0%, #0f172a 100%);
-    min-height: 100vh;
+    font-feature-settings: "cv11", "ss01";
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-outfit), 'Outfit', sans-serif;
+    font-family: var(--font-outfit), system-ui, sans-serif;
   }
 }
 
 @layer components {
-  /* Premium Glassmorphism */
-  .glass {
-    background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--glass-border);
-    box-shadow: var(--glass-shadow);
+  .glass-panel {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-sm;
   }
   
-  .glass-card {
-    @apply glass rounded-2xl;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  }
-
-  .glass-card:hover {
-    border-color: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.45);
-  }
-  
-  .glass-button {
-    @apply glass rounded-xl px-4 py-2 font-medium;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-  }
-  
-  .glass-button:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateY(-2px);
-    border-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  }
-
-  /* Animations */
-  .animate-blob {
-    animation: blob 10s infinite;
-  }
-  
-  .animation-delay-2000 {
-    animation-delay: 2s;
-  }
-  
-  .animation-delay-4000 {
-    animation-delay: 4s;
-  }
-}
-
-@keyframes blob {
-  0% {
-    transform: translate(0px, 0px) scale(1);
-  }
-  33% {
-    transform: translate(30px, -50px) scale(1.1);
-  }
-  66% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
-  100% {
-    transform: translate(0px, 0px) scale(1);
+  .container-width {
+    @apply max-w-screen-lg mx-auto px-4 sm:px-6;
   }
 }
