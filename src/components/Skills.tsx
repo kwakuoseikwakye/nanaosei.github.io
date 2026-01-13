@@ -1,8 +1,8 @@
 import {
     SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiRedux, SiVuedotjs,
     SiNodedotjs, SiExpress, SiPhp, SiLaravel, SiGo, SiPython, SiPostgresql, SiMysql, SiMongodb,
-    SiGit, SiDocker, SiAmazon, SiLinux, SiNginx,
-    SiJavascript, SiHtml5, SiCss3
+    SiGit, SiDocker, SiAmazon, SiLinux, SiNginx, SiTerraform, SiGooglecloud,
+    SiJavascript
 } from "react-icons/si";
 import { Code2, Database, Layout, Terminal } from "lucide-react";
 
@@ -23,8 +23,6 @@ const skillGroups = [
             { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-[#06B6D4]" },
             { name: "Redux", icon: SiRedux, color: "text-[#764ABC]" },
             { name: "Vue.js", icon: SiVuedotjs, color: "text-[#4FC08D]" },
-            { name: "HTML5", icon: SiHtml5, color: "text-[#E34F26]" },
-            { name: "CSS3", icon: SiCss3, color: "text-[#1572B6]" },
         ]
     },
     {
@@ -49,6 +47,8 @@ const skillGroups = [
             { name: "Git", icon: SiGit, color: "text-[#F05032]" },
             { name: "Docker", icon: SiDocker, color: "text-[#2496ED]" },
             { name: "AWS", icon: SiAmazon, color: "text-[#FF9900]" },
+            { name: "Terraform", icon: SiTerraform, color: "text-[#623CE4]" },
+            { name: "GCP", icon: SiGooglecloud, color: "text-[#4285F4]" },
             { name: "Linux", icon: SiLinux, color: "text-black" },
             { name: "Nginx", icon: SiNginx, color: "text-[#009639]" }
         ]
