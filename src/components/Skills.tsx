@@ -1,59 +1,84 @@
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+    SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiRedux, SiVuedotjs,
+    SiNodedotjs, SiExpress, SiPhp, SiLaravel, SiGo, SiPython, SiPostgresql, SiMysql, SiMongodb,
+    SiGit, SiDocker, SiAmazon, SiLinux, SiNginx,
+    SiJavascript, SiHtml5, SiCss3
+} from "react-icons/si";
 import { Code2, Database, Layout, Terminal } from "lucide-react";
+
+interface Skill {
+    name: string;
+    icon: React.ElementType;
+    color?: string; // Optional custom color
+}
 
 const skillGroups = [
     {
         title: "Frontend",
         icon: <Layout className="size-4" />,
-        skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Redux", "Vue.js"]
+        skills: [
+            { name: "React", icon: SiReact, color: "text-[#61DAFB]" },
+            { name: "Next.js", icon: SiNextdotjs, color: "text-black" }, // Handle dark mode elsewhere if needed
+            { name: "TypeScript", icon: SiTypescript, color: "text-[#3178C6]" },
+            { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-[#06B6D4]" },
+            { name: "Redux", icon: SiRedux, color: "text-[#764ABC]" },
+            { name: "Vue.js", icon: SiVuedotjs, color: "text-[#4FC08D]" },
+            { name: "HTML5", icon: SiHtml5, color: "text-[#E34F26]" },
+            { name: "CSS3", icon: SiCss3, color: "text-[#1572B6]" },
+        ]
     },
     {
         title: "Backend",
         icon: <Database className="size-4" />,
-        skills: ["Node.js", "Express", "PHP", "Laravel","GoLang", "Python", "PostgreSQL", "MySQL", "MongoDB"]
+        skills: [
+            { name: "Node.js", icon: SiNodedotjs, color: "text-[#339933]" },
+            { name: "Express", icon: SiExpress, color: "text-black" },
+            { name: "PHP", icon: SiPhp, color: "text-[#777BB4]" },
+            { name: "Laravel", icon: SiLaravel, color: "text-[#FF2D20]" },
+            { name: "GoLang", icon: SiGo, color: "text-[#00ADD8]" },
+            { name: "Python", icon: SiPython, color: "text-[#3776AB]" },
+            { name: "PostgreSQL", icon: SiPostgresql, color: "text-[#4169E1]" },
+            { name: "MySQL", icon: SiMysql, color: "text-[#4479A1]" },
+            { name: "MongoDB", icon: SiMongodb, color: "text-[#47A248]" }
+        ]
     },
     {
         title: "Tools & DevOps",
         icon: <Terminal className="size-4" />,
-        skills: ["Git", "Docker", "AWS", "CI/CD", "Linux", "Nginx"]
-    },
-    {
-        title: "Languages",
-        icon: <Code2 className="size-4" />,
-        skills: ["JavaScript", "TypeScript", "PHP", "Python", "SQL", "HTML/CSS"]
+        skills: [
+            { name: "Git", icon: SiGit, color: "text-[#F05032]" },
+            { name: "Docker", icon: SiDocker, color: "text-[#2496ED]" },
+            { name: "AWS", icon: SiAmazon, color: "text-[#FF9900]" },
+            { name: "Linux", icon: SiLinux, color: "text-black" },
+            { name: "Nginx", icon: SiNginx, color: "text-[#009639]" }
+        ]
     }
 ]
 
 export const Skills = () => {
     return (
-        <Card className="glass-card border-none">
-            <CardHeader>
-                <CardTitle className="text-xl font-bold text-foreground">
-                    Skills & Technologies
-                </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-                {skillGroups.map((group, i) => (
-                    <div key={i} className="space-y-3">
-                        <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
-                            {group.icon}
-                            {group.title}
-                        </div>
-                        <div className="flex flex-wrap gap-2">
-                            {group.skills.map((skill) => (
-                                <Badge
-                                    key={skill}
-                                    variant="secondary"
-                                    className="bg-secondary/50 hover:bg-primary/20 hover:text-primary transition-colors cursor-default"
-                                >
-                                    {skill}
-                                </Badge>
-                            ))}
-                        </div>
+        <div className="space-y-12">
+            {skillGroups.map((group, i) => (
+                <div key={i} className="space-y-4">
+                    <div className="flex items-center gap-2 text-zinc-400 font-medium text-sm uppercase tracking-wider">
+                        {group.icon}
+                        {group.title}
                     </div>
-                ))}
-            </CardContent>
-        </Card>
+                    <div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4">
+                        {group.skills.map((skill) => (
+                            <div
+                                key={skill.name}
+                                className="flex flex-col items-center justify-center p-4 rounded-2xl bg-zinc-50 border border-zinc-100/50 hover:border-zinc-200 transition-colors group"
+                            >
+                                <skill.icon className={`size-8 mb-2 ${skill.color} filter grayscale group-hover:grayscale-0 transition-all duration-300`} />
+                                <span className="text-sm font-medium text-zinc-600 group-hover:text-zinc-900 transition-colors">
+                                    {skill.name}
+                                </span>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            ))}
+        </div>
     )
 }
