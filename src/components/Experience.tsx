@@ -5,10 +5,10 @@ import { Badge } from "@/components/ui/badge";
 const experiences = [
     {
         company: "Kirirom Digital",
-        role: "Software Engineer",
+        role: "Software/AI Engineer",
         period: "2024 — Present",
         location: "Tokyo",
-        description: "Leading development of scalable web applications using Next.js and React. Mentoring junior developers and implementing best practices for code quality and performance.",
+        description: "Leading development of scalable web applications using Next.js and React. Designed and implemented high-performance REST APIs and integrated AI orchestration systems. Mentoring junior developers and implementing best practices for code quality and performance.",
         skills: ["React", "Next.js", "TypeScript", "Node.js"],
         current: true
     },
