@@ -2,15 +2,9 @@ import {
     SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiRedux, SiVuedotjs,
     SiNodedotjs, SiExpress, SiPhp, SiLaravel, SiGo, SiPython, SiPostgresql, SiMysql, SiMongodb,
     SiGit, SiDocker, SiAmazon, SiLinux, SiNginx, SiTerraform, SiGooglecloud,
-    SiJavascript, SiOracle, SiJenkins, SiDatadog, SiPrometheus, SiRender, SiSupabase
+    SiOracle, SiJenkins, SiDatadog, SiPrometheus, SiRender, SiSupabase
 } from "react-icons/si";
-import { Code2, Database, Layout, Terminal } from "lucide-react";
-
-interface Skill {
-    name: string;
-    icon: React.ElementType;
-    color?: string; // Optional custom color
-}
+import { Database, Layout, Terminal } from "lucide-react";
 
 const skillGroups = [
     {

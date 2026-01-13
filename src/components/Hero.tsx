@@ -4,7 +4,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaLinkedin, FaStackOverflow } from "react-icons/fa";
-import { Mail, ArrowRight, Download } from "lucide-react";
+import { Mail, Download } from "lucide-react";
 
 export const Hero = () => {
     return (
@@ -30,7 +30,7 @@ export const Hero = () => {
             <div className="space-y-4 max-w-2xl mx-auto px-4">
                 <div className="flex items-center justify-center gap-2 text-zinc-600 font-medium bg-zinc-50 w-fit mx-auto px-4 py-1.5 rounded-full border border-zinc-100">
                     <span>👋</span>
-                    <span>Hello, I'm Kwaku</span>
+                    <span>Hello, I&apos;m Kwaku</span>
                 </div>
 
                 <h1 className="font-heading font-bold text-4xl md:text-6xl text-zinc-900 tracking-tight leading-tight">
@@ -39,7 +39,7 @@ export const Hero = () => {
                 </h1>
 
                 <p className="text-zinc-500 text-lg md:text-xl max-w-lg mx-auto leading-relaxed">
-                    I'm a Software Engineer focused on building accessible, pixel-perfect, and performant web applications.
+                    I&apos;m a Software Engineer focused on building accessible, pixel-perfect, and performant web applications.
                 </p>
             </div>
 
