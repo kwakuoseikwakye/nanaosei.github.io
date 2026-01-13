@@ -2,7 +2,7 @@ import {
     SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiRedux, SiVuedotjs,
     SiNodedotjs, SiExpress, SiPhp, SiLaravel, SiGo, SiPython, SiPostgresql, SiMysql, SiMongodb,
     SiGit, SiDocker, SiAmazon, SiLinux, SiNginx, SiTerraform, SiGooglecloud,
-    SiJavascript
+    SiJavascript, SiOracle, SiJenkins, SiDatadog, SiPrometheus, SiRender, SiSupabase
 } from "react-icons/si";
 import { Code2, Database, Layout, Terminal } from "lucide-react";
 
@@ -37,6 +37,8 @@ const skillGroups = [
             { name: "Python", icon: SiPython, color: "text-[#3776AB]" },
             { name: "PostgreSQL", icon: SiPostgresql, color: "text-[#4169E1]" },
             { name: "MySQL", icon: SiMysql, color: "text-[#4479A1]" },
+            { name: "Supabase", icon: SiSupabase, color: "text-[#3ECF8E]" },
+            { name: "Oracle", icon: SiOracle, color: "text-[#F80000]" },
             { name: "MongoDB", icon: SiMongodb, color: "text-[#47A248]" }
         ]
     },
@@ -49,6 +51,12 @@ const skillGroups = [
             { name: "AWS", icon: SiAmazon, color: "text-[#FF9900]" },
             { name: "Terraform", icon: SiTerraform, color: "text-[#623CE4]" },
             { name: "GCP", icon: SiGooglecloud, color: "text-[#4285F4]" },
+            { name: "Render", icon: SiRender, color: "text-[#46E3B7]" },
+            { name: "Jenkins", icon: SiJenkins, color: "text-[#D24939]" },
+            { name: "Datadog", icon: SiDatadog, color: "text-[#632CA6]" },
+            { name: "Prometheus", icon: SiPrometheus, color: "text-[#E6522C]" },
+            { name: "Laravel Nightwatch", icon: SiLaravel, color: "text-[#FF2D20]" },
+            { name: "Laravel Cloud", icon: SiLaravel, color: "text-[#FF2D20]" },
             { name: "Linux", icon: SiLinux, color: "text-black" },
             { name: "Nginx", icon: SiNginx, color: "text-[#009639]" }
         ]
