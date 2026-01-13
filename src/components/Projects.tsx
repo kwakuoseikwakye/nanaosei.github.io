@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ExternalLink, Github, Folder } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
@@ -8,35 +9,40 @@ export const projects = [
         description: "An AI platform for generating personal videos in different languages. Leveraging advanced TTS and lip-sync technologies.",
         tech: ["TypeScript", "Next.js", "AI", "PostgreSQL"],
         link: "https://www.michol.in",
-        github: null
+        github: null,
+        image: null
     },
     {
         title: "Gasppy",
         description: "A comprehensive gift card management platform enabling businesses to create, manage, and track gift cards.",
         tech: ["Next.js", "React", "Node.js", "PostgreSQL"],
         link: "https://gasppy.com",
-        github: null
+        github: null,
+        image: "/gasppy.png"
     },
     {
         title: "FundPeck",
         description: "A crowdfunding platform empowering creators and startups to raise funds securely and efficiently.",
         tech: ["PHP", "Laravel", "PostgreSQL", "Golang"],
         link: "https://fundpeck.com",
-        github: null
+        github: null,
+        image: null
     },
     {
         title: "TheTeller Plugin",
         description: "A robust WooCommerce payment gateway plugin for TheTeller, enabling seamless transactions for merchants.",
         tech: ["PHP", "WordPress", "WooCommerce"],
         link: "https://github.com/kwakuoseikwakye/woocommerce-theteller-payment-gateway",
-        github: "https://github.com/kwakuoseikwakye/woocommerce-theteller-payment-gateway"
+        github: "https://github.com/kwakuoseikwakye/woocommerce-theteller-payment-gateway",
+        image: null
     },
     {
         title: "Nanascript Kit",
         description: "A simplified, lightweight Express.js starter kit for building scalable APIs quickly with best practices.",
         tech: ["JavaScript", "Express", "Node.js"],
         link: "https://www.npmjs.com/package/nanascript-express-api-starter-kit",
-        github: "https://github.com/kwakuoseikwakye/nanascript-express-api-starter-kit"
+        github: "https://github.com/kwakuoseikwakye/nanascript-express-api-starter-kit",
+        image: null
     },
 ]
 
@@ -45,11 +51,20 @@ export const Projects = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {projects.map((p, i) => (
                 <div key={i} className="group space-y-4">
-                    {/* Image Placeholder / Link Area */}
-                    <a href={p.link} target="_blank" className="block overflow-hidden rounded-2xl bg-zinc-100 aspect-video relative group-hover:scale-100 transition-transform">
-                        <div className="absolute inset-0 flex items-center justify-center text-zinc-300 group-hover:text-zinc-400 transition-colors">
-                            <Folder className="size-16" strokeWidth={1} />
-                        </div>
+                    {/* Image Area */}
+                    <a href={p.link} target="_blank" className="block overflow-hidden rounded-2xl bg-zinc-100 aspect-video relative group-hover:scale-[1.02] transition-transform duration-300">
+                        {p.image ? (
+                            <Image
+                                src={p.image}
+                                alt={p.title}
+                                fill
+                                className="object-cover"
+                            />
+                        ) : (
+                            <div className="absolute inset-0 flex items-center justify-center text-zinc-300 group-hover:text-zinc-400 transition-colors">
+                                <Folder className="size-16" strokeWidth={1} />
+                            </div>
+                        )}
                         {/* Overlay */}
                         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300" />
                     </a>
