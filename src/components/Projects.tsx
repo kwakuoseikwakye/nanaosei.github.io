@@ -10,7 +10,7 @@ export const projects = [
         tech: ["TypeScript", "Next.js", "AI", "PostgreSQL"],
         link: "https://www.michol.in",
         github: null,
-        image: null
+        image: "/micholin.png"
     },
     {
         title: "Gasppy",
