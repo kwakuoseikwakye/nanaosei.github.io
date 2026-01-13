@@ -26,7 +26,7 @@ export const projects = [
         tech: ["PHP", "Laravel", "PostgreSQL", "Golang"],
         link: "https://fundpeck.com",
         github: null,
-        image: null
+        image: "/fundpeck.png"
     },
     {
         title: "TheTeller Plugin",
